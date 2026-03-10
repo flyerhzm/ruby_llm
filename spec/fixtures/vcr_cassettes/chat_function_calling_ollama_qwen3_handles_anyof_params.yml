@@ -12,7 +12,7 @@ http_interactions:
         description"},"status":{"description":"Optional task status","anyOf":[{"type":"string","enum":["pending","done"]},{"type":"null"}]}},"required":["task","status"],"additionalProperties":false,"strict":true}}}],"enable_thinking":false}'
     headers:
       User-Agent:
-      - Faraday v2.14.0
+      - Faraday v2.14.1
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -27,27 +27,24 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 16 Jan 2026 17:10:45 GMT
+      - Tue, 03 Mar 2026 11:52:50 GMT
       Content-Length:
-      - '1430'
+      - '1195'
     body:
       encoding: UTF-8
-      string: '{"id":"chatcmpl-567","object":"chat.completion","created":1768583445,"model":"qwen3","system_fingerprint":"fp_ollama","choices":[{"index":0,"message":{"role":"assistant","content":"","reasoning":"Okay,
-        let me see. The user wants me to call the any_of_params function for the task
-        \"Review PR\" with status \"pending\" and report the result.\n\nFirst, I need
-        to check the function''s parameters. The function requires \"task\" and \"status\".
-        The status can be either \"pending\", \"done\", or null. Since the user provided
-        \"pending\", that''s valid. The task is \"Review PR\", which is a string.
-        \n\nWait, the parameters are set up with anyOf for status. So the status can
-        be a string from the enum or null. The user specified \"pending\", which is
-        in the enum, so that''s acceptable. The task is straightforward, just a string.
-        \n\nI should structure the JSON arguments with task as \"Review PR\" and status
-        as \"pending\". No need for null here. Let me make sure the JSON is correctly
-        formatted. The function name is any_of_params. So the tool_call should include
-        the name and the arguments. \n\nI think that''s all. Let me put it into the
-        tool_call format.\n","tool_calls":[{"id":"call_nerroqdt","index":0,"type":"function","function":{"name":"any_of_params","arguments":"{\"status\":\"pending\",\"task\":\"Review
-        PR\"}"}}]},"finish_reason":"tool_calls"}],"usage":{"prompt_tokens":193,"completion_tokens":250,"total_tokens":443}}
+      string: '{"id":"chatcmpl-718","object":"chat.completion","created":1772538770,"model":"qwen3","system_fingerprint":"fp_ollama","choices":[{"index":0,"message":{"role":"assistant","content":"","reasoning":"Okay,
+        the user wants me to call the any-of params tool for the task \"Review PR\"
+        with status \"pending\" and report the result. Let me check the tools provided.
+        The function given is any_of_params, which takes a task and status. The status
+        can be either \"pending\", \"done\", or null. Since the user specified \"pending\",
+        that''s valid. I need to structure the JSON arguments correctly. The task
+        is \"Review PR\" and the status is \"pending\". So the function call should
+        include both parameters. I''ll make sure the JSON syntax is correct and that
+        the arguments are properly formatted. Let me double-check the enum values
+        to confirm \"pending\" is allowed. Yes, it''s in the enum list. Alright, time
+        to output the tool_call.\n","tool_calls":[{"id":"call_xriemphr","index":0,"type":"function","function":{"name":"any_of_params","arguments":"{\"task\":\"Review
+        PR\",\"status\":\"pending\"}"}}]},"finish_reason":"tool_calls"}],"usage":{"prompt_tokens":186,"completion_tokens":191,"total_tokens":377}}
 
         '
-  recorded_at: Fri, 16 Jan 2026 17:10:45 GMT
+  recorded_at: Thu, 05 Mar 2026 10:02:24 GMT
 recorded_with: VCR 6.4.0

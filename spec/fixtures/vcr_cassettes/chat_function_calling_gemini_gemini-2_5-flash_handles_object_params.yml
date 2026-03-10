@@ -12,7 +12,7 @@ http_interactions:
         start"},"end":{"type":"STRING","description":"ISO end"}},"required":["start","end"]}},"required":["window"]}}]}]}'
     headers:
       User-Agent:
-      - Faraday v2.14.0
+      - Faraday v2.14.1
       X-Goog-Api-Key:
       - "<GEMINI_API_KEY>"
       Content-Type:
@@ -33,7 +33,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Fri, 16 Jan 2026 17:10:57 GMT
+      - Tue, 03 Mar 2026 11:53:04 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -43,7 +43,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Server-Timing:
-      - gfet4t7; dur=1142
+      - gfet4t7; dur=1122
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
@@ -61,12 +61,12 @@ http_interactions:
                       "name": "object_params",
                       "args": {
                         "window": {
-                          "start": "2025-01-01",
-                          "end": "2025-01-02"
+                          "end": "2025-01-02",
+                          "start": "2025-01-01"
                         }
                       }
                     },
-                    "thoughtSignature": "CrEDAXLI2nyro3ywicFepQI5I4/VUZGfUdf1FpeloMEcGB2b1YzLXjVeyB+2T8H5xa8z+ac2Etiami8BuXeOaONW+Znxje1bRkhP7tz9lIEOCYTk5IJL5KnUEh/ZUZ7+LuOYmJnKgJ6sR7FCWsnpKSio6Qo0J+JTverxU7M/P5cTwy7KxjD+0s/eLBs83EsceERBmZaNlLvCLhWmr9xAGV1D0m0v5gZkMtqTPxMw9Wgi8Q6vQ4LlfZQzs0k+MlG45PqNaNfKSCHd+KDifMYRwF3Y7ogyN0/A4lSmmNq75E7WG5slPV7zsibVzBmiUGc1AbUafkv+iIyjcgzkCVI27WXNCgWz0e7Ws0dQ8QMz1orfZDBJV4S2uHgeXRdJyhQPSKjIwvIiFYIGIQ5fVHWwh1rnQC00dq0q5zMhfeuCVPGRKKL+DF+Dl1ghEpELZMpQ8o0KoGT71DYAApIftU/e948lsGJkbozd1Ba+bGTcL2IkSB4xJkUckAt7cAcYjlCFjTLKmRXFPYUqLD4uJDajpfSjK1wr1rnLayRkGgGefsVZ8F+XLxu9vyKO6NrJFAODE8/PVg=="
+                    "thoughtSignature": "CrEDAb4+9vvY46iZdr7gbvMM/s2nOxyS1lF7nFP5WWVHEnRsVx5rXfnpokP5fxd+FQ21+CqEQjcvsizLuZdsqy2+vBufqobkY0AYSqcNDY/mQkXi19AaqOJl0cel0vYWLDdiBB7WodvjSOSiDrlhfXMTgw5ORC28q/pr16kUd8B4rpyxWbguWo+Ax9EoXr8fm/kSlw9iPR54bYClSKvExd2y9jZNsWRH4lo/8wwDmaL1crRoNvywDauWEcXIyGNryJFp2ZkTh5DzXna6fDCYNAQXsjwi0ERg6I/vq+yev7v8DsxjlL5e8C/5FbzUvo4mZnWIVmY8uW1xidaiDN+EwXO9YE/m9sPVWk9G0zA89HuYt+FdJSyj9x4X5dpkKT4YffDalnvBntcmdpTsHirCKDuYHHQQX/TqdEWxi6dD/IW0sAG2Kefi0GAUUGo1M3I0jit/oeeZhF3Ne6n4EtAWf0OwWRG+MwtSL4m02QaxEUc94qW/X4m6VX2e6dwUXdrZnRyiJTDHQxobV3hQlXCjoUmwQ4p60b+cgashCAd6iQDbL9/Yyns/SinW3gr5vpG9+5bOMg=="
                   }
                 ],
                 "role": "model"
@@ -89,7 +89,7 @@ http_interactions:
             "thoughtsTokenCount": 120
           },
           "modelVersion": "gemini-2.5-flash",
-          "responseId": "IXFqadOdGYON28oP9Oi-0AY"
+          "responseId": "n8umaZ3iMeeYkdUPhuWx6A4"
         }
-  recorded_at: Fri, 16 Jan 2026 17:10:57 GMT
+  recorded_at: Thu, 05 Mar 2026 10:02:24 GMT
 recorded_with: VCR 6.4.0

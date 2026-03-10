@@ -11,7 +11,7 @@ http_interactions:
         of tags to combine","items":{"type":"STRING"}}},"required":["tags"]}}]}]}'
     headers:
       User-Agent:
-      - Faraday v2.14.0
+      - Faraday v2.14.1
       X-Goog-Api-Key:
       - "<GEMINI_API_KEY>"
       Content-Type:
@@ -32,7 +32,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Fri, 16 Jan 2026 17:10:26 GMT
+      - Tue, 03 Mar 2026 11:52:28 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -42,7 +42,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Server-Timing:
-      - gfet4t7; dur=1002
+      - gfet4t7; dur=1058
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
@@ -65,7 +65,7 @@ http_interactions:
                         ]
                       }
                     },
-                    "thoughtSignature": "Co0DAXLI2nyabJW3He2r5CnGY1JqTT6s2xq9kF8ku6dDTlw8YH9cl/49svdIsiNmRSX1U3eBcGW37UYP0bXCqMMAPGtwwD7imvOxJmWIYr0xq8b7uKWwCEm+BXXR7Dveh3BFp2F9zu1WfIMPlBh5C/Rbpk/cGMTbpnlKaeSVU6UXT0jx1uHaNNLxU19jxztqg5Pv0cwFIJeCMeL4Z9QNYgn7/esMeGrCVKISXxIKmiZOkqOAwL50SHCwE8WpnwCjT522fAaB/O59hMNftfccRGYSjPIIDwIn+Yegd62hdshK0qCiouxZYY5M33wj4veQgP0flUx4NokZGal+318Sl2PYB3aKYmotCqzhn4xkSMa34lW8Ns+qYuMhnhvk06KPdJd+VpBpzPGBIzhIzQFxUY23abLWcMwEcw6RyvTO4tSOeM1FEqeiIS8le7F3cr3iwAzDDLQvFtzzBj4pIhYG9aVmD6MlDyDrbw3jGGJPw2+FliohkZP25rjwEoFDFuKXzFGchktgNM6ZQpTkkViptg=="
+                    "thoughtSignature": "Cu4EAb4+9vuEtbyO9pZm+NJtp9TKM2D9DGkm19+B3FvKjBGiGdmYh6ur+OEBUIrQMslX5fLeldf0pzm71EX/+BenJX4o2q9Kpd1hF3y1JonkD+6Cu7Rvdxl47CEmboxbY4bq54/A1PenxYLwLHYseAuDnz7baxTN/5SsW9NJ6wECbZRu12Ixyoaas8lShS/R2suJ5FKhVh2d9Nz9vuBDXFYLrBjYKqhIZNzqW6+F+qEb+okI5PDkXqep/GItkuKWY9CXML9+fZJkslqvKeXEVtS9uushiKYPku5/SyeT4lAjBpJSt1OF07SaqnXqD8XjNHF+ZFh87vLCo9EYeff91q+xQFuvKPvUOr97ltzE1+crrEDNM2NH6gra4URqW8yVHkCMxqDg7i+5TSBm17qwmOdMvurWLImjVTBv974b+jwCZr1zZyv9rh3ilYy4iGpW1gLNmlVl2flvJA20AaIZc3NuW1Vz4pqvI1WdYd8V36XNYL9FovpduWfgY1pb/NRhDtR6lJ4qF6d7UpdrSn7aBwfTRxWXxiNTPVRhCgcKnwC05KLPsT1J1l1yeQ0+VxFhHhI/XK8JmqIQ+YmShCVDbZqqN+xZyNLhAyyKEJjnYU4ur2IDY4ns307E+RCGKznVYtDvKWIgjkEK6CiLLEmXVhQG1QiqKMzTHec0OvZ2Y//t2w5wvcaigPQY2fMvaqClzfj8o19mYOsjn+hLZgISPQYrTDALtg+jIPm+xM9gfFeOdZezi5eZM6f9jijNGgr+jnq90SAWbg3Ph+Dwr04L/G1keYHJuayzugz3rGoO/VWT2O/p2yDy5tw9NmSU1ujv3Q=="
                   }
                 ],
                 "role": "model"
@@ -78,17 +78,17 @@ http_interactions:
           "usageMetadata": {
             "promptTokenCount": 63,
             "candidatesTokenCount": 18,
-            "totalTokenCount": 160,
+            "totalTokenCount": 207,
             "promptTokensDetails": [
               {
                 "modality": "TEXT",
                 "tokenCount": 63
               }
             ],
-            "thoughtsTokenCount": 79
+            "thoughtsTokenCount": 126
           },
           "modelVersion": "gemini-2.5-flash",
-          "responseId": "AnFqaaPOFbnPnsEP5NTWgQM"
+          "responseId": "e8umab70F6yhnsEPt5jPqA0"
         }
-  recorded_at: Fri, 16 Jan 2026 17:10:26 GMT
+  recorded_at: Thu, 05 Mar 2026 10:02:24 GMT
 recorded_with: VCR 6.4.0

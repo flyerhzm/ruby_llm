@@ -70,7 +70,7 @@ This approach optimizes for real-time experiences:
 The easiest way to get started is using the provided Rails generator:
 
 ```bash
-rails generate ruby_llm:install
+bin/rails generate ruby_llm:install
 ```
 
 The generator:
@@ -83,7 +83,8 @@ The generator:
 After running the generator:
 
 ```bash
-rails db:migrate
+bin/rails db:migrate
+bin/rails ruby_llm:load_models # v1.13+
 ```
 
 Your Rails app is now AI-ready!
@@ -94,7 +95,7 @@ Your Rails app is now AI-ready!
 Want a ready-to-use chat interface? Run the chat UI generator:
 
 ```bash
-rails generate ruby_llm:chat_ui
+bin/rails generate ruby_llm:chat_ui
 ```
 
 This creates a complete chat interface with:
@@ -109,7 +110,7 @@ The UI generator also supports custom model names:
 
 ```bash
 # Use your custom model names from the install generator
-rails generate ruby_llm:chat_ui chat:Conversation message:ChatMessage model:AIModel
+bin/rails generate ruby_llm:chat_ui chat:Conversation message:ChatMessage model:AIModel
 ```
 
 #### Generator Options
@@ -118,17 +119,19 @@ The generator uses Rails-like syntax for custom model names:
 
 ```bash
 # Default - creates Chat, Message, ToolCall, Model
-rails generate ruby_llm:install
+bin/rails generate ruby_llm:install
 
 # Custom model names using Rails conventions
-rails generate ruby_llm:install chat:Conversation message:ChatMessage
-rails generate ruby_llm:install chat:Discussion message:DiscussionMessage tool_call:FunctionCall model:AIModel
+bin/rails generate ruby_llm:install chat:Conversation message:ChatMessage
+bin/rails generate ruby_llm:install chat:Discussion message:DiscussionMessage tool_call:FunctionCall model:AIModel
 
 # Skip ActiveStorage if you don't need file attachments
-rails generate ruby_llm:install --skip-active-storage
+bin/rails generate ruby_llm:install --skip-active-storage
 ```
 
 The `name:ClassName` syntax follows Rails conventions - specify only what you want to customize.
+
+For most apps, keep the default behavior (install ActiveStorage) so file attachments work out of the box. Use `--skip-active-storage` only when you're sure you won't send files to models.
 
 
 ### Setting Up ActiveStorage
@@ -136,8 +139,8 @@ The `name:ClassName` syntax follows Rails conventions - specify only what you wa
 The generator automatically configures ActiveStorage for file attachments. If you skipped it during generation, add it manually:
 
 ```bash
-rails active_storage:install
-rails db:migrate
+bin/rails active_storage:install
+bin/rails db:migrate
 ```
 
 Then add to your Message model:
@@ -170,7 +173,7 @@ chat.ask(raw_block)
 
 The v1.9 schema adds a `content_raw` column so raw payloads live alongside the plain-text `content` field. When you load messages via `acts_as_message`, RubyLLM reconstructs the original `Content::Raw` automatically.
 
-> Existing apps: run `rails generate ruby_llm:upgrade_to_v1_9` to add cached-token tracking and raw content storage columns introduced in v1.9.0. New apps will get the proper columns from the install generator.
+> Existing apps: run `bin/rails generate ruby_llm:upgrade_to_v1_9` to add cached-token tracking and raw content storage columns introduced in v1.9.0. New apps will get the proper columns from the install generator.
 {: .note }
 
 ### Configuring RubyLLM
@@ -191,6 +194,24 @@ RubyLLM.configure do |config|
   # config.model_registry_class = 'AIModel'
 end
 ```
+
+### Fiber-Safe ActiveRecord Connections for Async/Fiber Workloads
+{: .d-inline-block }
+
+Rails 7.2.1+ / 8.x
+{: .label .label-green }
+
+If your app performs database work inside Fibers (for example with async-based workflow stacks), use fiber-safe connection isolation:
+
+```ruby
+# config/application.rb
+config.active_support.isolation_level = :fiber
+```
+
+Why: Rails defaults to thread-based connection isolation. In fiber-heavy flows, that can cause intermittent connection-state issues. `:fiber` scopes ActiveRecord connections per Fiber instead of per Thread.
+
+> If you use this setting, prefer Rails versions with fiber isolation fixes (Rails 7.2.1+ / 8.x).
+{: .note }
 
 ### Setting Up Models with `acts_as` Helpers
 
@@ -297,7 +318,7 @@ Route models through different providers dynamically:
 # Use a model through a different provider
 chat = Chat.create!(
   model: '{{ site.models.anthropic_current }}',
-  provider: 'bedrock'  # Use AWS Bedrock instead of Anthropic
+  provider: 'bedrock'  # Route this model through AWS Bedrock
 )
 
 # The model registry handles the routing automatically
@@ -438,8 +459,8 @@ chat.model.name # => "GPT-4"
 chat.model.context_window # => 128000
 chat.model.supports_vision # => true
 
-# Populate/refresh models from models.json
-rails ruby_llm:load_models
+# Populate/refresh models from models.json (v1.13+)
+bin/rails ruby_llm:load_models
 
 # Query based on model attributes
 Chat.joins(:model).where(models: { provider: 'anthropic' })
@@ -449,6 +470,8 @@ Model.left_joins(:chats).group(:id).order('COUNT(chats.id) DESC')
 Model.where(supports_functions: true)
 Model.where(supports_vision: true)
 ```
+
+If the model registry table is empty (or not available yet), RubyLLM falls back to `models.json` for lookups (v1.13+).
 
 ### System Instructions
 
@@ -460,8 +483,11 @@ chat_record = Chat.create!(model: '{{ site.models.default_chat }}')
 # This creates and saves a Message record with role: :system
 chat_record.with_instructions("You are a Ruby expert.")
 
-# Replace all system messages with a new one
-chat_record.with_instructions("You are a concise Ruby expert.", replace: true)
+# By default, with_instructions replaces the active system instruction
+chat_record.with_instructions("You are a concise Ruby expert.")
+
+# Append only when you intentionally want multiple system prompts
+chat_record.with_instructions("Use short bullet points.", append: true)
 
 system_message = chat_record.messages.find_by(role: :system)
 puts system_message.content # => "You are a concise Ruby expert."
@@ -653,7 +679,7 @@ class MessagesController < ApplicationController
     @chat = Chat.find(params[:chat_id])
 
     # Create and persist the user message immediately
-    @chat.create_user_message(params[:content])
+    @chat.add_message(role: :user, content: params[:content])
 
     # Process AI response in background
     ChatStreamJob.perform_later(@chat.id)
@@ -666,7 +692,7 @@ class MessagesController < ApplicationController
 end
 ```
 
-The `create_user_message` method provides instant feedback while processing continues in the background.
+The `add_message` method provides instant feedback while processing continues in the background.
 
 ### Full Streaming Implementation
 
@@ -676,19 +702,19 @@ Complete example with background jobs and Turbo Streams:
 # app/models/chat.rb
 class Chat < ApplicationRecord
   acts_as_chat
-  broadcasts_to ->(chat) { [chat, "messages"] }
 end
 
 # app/models/message.rb
 class Message < ApplicationRecord
   acts_as_message
-  broadcasts_to ->(message) { [message.chat, "messages"] }
+  broadcasts_to ->(message) { "chat_#{message.chat_id}" }
 
   # Helper to broadcast chunks during streaming
   def broadcast_append_chunk(chunk_content)
-    broadcast_append_to [ chat, "messages" ], # Target the stream
-      target: dom_id(self, "content"), # Target the content div inside the message frame
-      html: chunk_content # Append the raw chunk
+    broadcast_append_to "chat_#{chat_id}",
+      target: "message_#{id}_content",
+      partial: "messages/content",
+      locals: { content: chunk_content }
   end
 end
 
@@ -715,7 +741,7 @@ end
 
 ```erb
 <%# app/views/chats/show.html.erb %>
-<%= turbo_stream_from [@chat, "messages"] %>
+<%= turbo_stream_from "chat_#{@chat.id}" %>
 <h1>Chat <%= @chat.id %></h1>
 <div id="messages">
   <%= render @chat.messages %>
@@ -727,17 +753,15 @@ end
 <% end %>
 
 <%# app/views/messages/_message.html.erb %>
-<%= turbo_frame_tag message do %>
-  <div class="message <%= message.role %>">
-    <strong><%= message.role.capitalize %>:</strong>
-    <%# Target div for streaming content %>
-    <div id="<%= dom_id(message, "content") %>" style="display: inline;">
-      <%# Render initial content if not streaming, otherwise job appends here %>
-      <%= message.content.present? ? simple_format(message.content) : '<span class="thinking">...</span>'.html_safe %>
-    </div>
+<div id="message_<%= message.id %>" class="message">
+  <strong><%= message.role.capitalize %>:</strong>
+  <div id="message_<%= message.id %>_content" style="white-space: pre-wrap;">
+    <%= message.content %>
   </div>
-<% end %>
+</div>
 ```
+
+This helper intentionally lives in your app model (via generator) rather than core RubyLLM methods, so streaming behavior stays explicit and customizable.
 
 
 This implementation provides:

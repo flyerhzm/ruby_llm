@@ -37,13 +37,16 @@ module RubyLLM
       self.class.configuration_requirements
     end
 
-    def complete(messages, tools:, temperature:, model:, params: {}, headers: {}, schema: nil, thinking: nil, &) # rubocop:disable Metrics/ParameterLists
+    # rubocop:disable Metrics/ParameterLists
+    def complete(messages, tools:, temperature:, model:, params: {}, headers: {}, schema: nil, thinking: nil,
+                 tool_prefs: nil, &)
       normalized_temperature = maybe_normalize_temperature(temperature, model)
 
       payload = Utils.deep_merge(
         render_payload(
           messages,
           tools: tools,
+          tool_prefs: tool_prefs,
           temperature: normalized_temperature,
           model: model,
           stream: block_given?,
@@ -59,6 +62,7 @@ module RubyLLM
         sync_response @connection, payload, headers
       end
     end
+    # rubocop:enable Metrics/ParameterLists
 
     def list_models
       response = @connection.get models_url
@@ -100,6 +104,10 @@ module RubyLLM
 
     def remote?
       self.class.remote?
+    end
+
+    def assume_models_exist?
+      self.class.assume_models_exist?
     end
 
     def parse_error(response)
@@ -156,6 +164,10 @@ module RubyLLM
         []
       end
 
+      def configuration_options
+        []
+      end
+
       def local?
         false
       end
@@ -164,12 +176,17 @@ module RubyLLM
         !local?
       end
 
+      def assume_models_exist?
+        false
+      end
+
       def configured?(config)
         configuration_requirements.all? { |req| config.send(req) }
       end
 
       def register(name, provider_class)
         providers[name.to_sym] = provider_class
+        RubyLLM::Configuration.register_provider_options(provider_class.configuration_options)
       end
 
       def resolve(name)

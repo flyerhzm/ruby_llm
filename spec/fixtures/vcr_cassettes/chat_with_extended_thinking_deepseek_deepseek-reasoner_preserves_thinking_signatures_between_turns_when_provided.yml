@@ -9,7 +9,7 @@ http_interactions:
         is 5 + 3?"}],"stream":false,"reasoning_effort":"medium"}'
     headers:
       User-Agent:
-      - Faraday v2.14.0
+      - Faraday v2.14.1
       Authorization:
       - Bearer <DEEPSEEK_API_KEY>
       Content-Type:
@@ -30,7 +30,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 16 Jan 2026 16:59:55 GMT
+      - Tue, 03 Mar 2026 11:53:17 GMT
       Server:
       - elb
       Vary:
@@ -38,7 +38,7 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       X-Ds-Trace-Id:
-      - 6e185a42f008523742aaaa4133d6e2f7
+      - '08bb77ca47ad8b1e73180faca23aa3af'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -46,43 +46,31 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 cb643617ee4bca09492409ac12401bfc.cloudfront.net (CloudFront)
+      - 1.1 6705fde62c89246795b7b0fe68d664cc.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - TXL50-P4
+      - TXL50-P3
       X-Amz-Cf-Id:
-      - ah4wRiBdQl-nOmCGIN-55E3hetNTj5xFLqMjGBUhU8cdJvWlu4iOSw==
+      - 2Br8UYd_hutrXYOAj0I5a_bQI_BUWXj9ffG6b7SJjKT1U_A-FBKtpg==
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"7f0968ca-fe07-4be6-8369-af1a5a522ed5","object":"chat.completion","created":1768582795,"model":"deepseek-reasoner","choices":[{"index":0,"message":{"role":"assistant","content":"5
-        + 3 = 8.","reasoning_content":"We are asked: \"What is 5 + 3?\" This is a
-        simple arithmetic addition. 5 plus 3 equals 8. So the answer is 8.\n\nWe should
-        respond in a helpful manner. Since it''s a straightforward question, we can
-        just answer: 8.\n\nHowever, the user might expect a response that is not just
-        the number but perhaps a sentence. But the instruction is to be helpful, so
-        we can answer directly.\n\nLet''s output: 5 + 3 = 8."},"logprobs":null,"finish_reason":"stop"}],"usage":{"prompt_tokens":12,"completion_tokens":114,"total_tokens":126,"prompt_tokens_details":{"cached_tokens":0},"completion_tokens_details":{"reasoning_tokens":105},"prompt_cache_hit_tokens":0,"prompt_cache_miss_tokens":12},"system_fingerprint":"fp_eaab8d114b_prod0820_fp8_kvcache"}'
-  recorded_at: Fri, 16 Jan 2026 16:59:59 GMT
+      string: '{"id":"61055e75-38d2-4163-b438-15a52c5bb202","object":"chat.completion","created":1772538797,"model":"deepseek-reasoner","choices":[{"index":0,"message":{"role":"assistant","content":"The
+        result of 5 + 3 is 8.","reasoning_content":"We are asked: \"What is 5 + 3?\"
+        This is a simple arithmetic addition. 5 + 3 = 8. So the answer is 8."},"logprobs":null,"finish_reason":"stop"}],"usage":{"prompt_tokens":12,"completion_tokens":49,"total_tokens":61,"prompt_tokens_details":{"cached_tokens":0},"completion_tokens_details":{"reasoning_tokens":36},"prompt_cache_hit_tokens":0,"prompt_cache_miss_tokens":12},"system_fingerprint":"fp_eaab8d114b_prod0820_fp8_kvcache"}'
+  recorded_at: Thu, 05 Mar 2026 10:02:24 GMT
 - request:
     method: post
     uri: https://api.deepseek.com/chat/completions
     body:
       encoding: UTF-8
       string: '{"model":"deepseek-reasoner","messages":[{"role":"user","content":"What
-        is 5 + 3?"},{"role":"assistant","content":"5 + 3 = 8.","reasoning":"We are
-        asked: \"What is 5 + 3?\" This is a simple arithmetic addition. 5 plus 3 equals
-        8. So the answer is 8.\n\nWe should respond in a helpful manner. Since it''s
-        a straightforward question, we can just answer: 8.\n\nHowever, the user might
-        expect a response that is not just the number but perhaps a sentence. But
-        the instruction is to be helpful, so we can answer directly.\n\nLet''s output:
-        5 + 3 = 8.","reasoning_content":"We are asked: \"What is 5 + 3?\" This is
-        a simple arithmetic addition. 5 plus 3 equals 8. So the answer is 8.\n\nWe
-        should respond in a helpful manner. Since it''s a straightforward question,
-        we can just answer: 8.\n\nHowever, the user might expect a response that is
-        not just the number but perhaps a sentence. But the instruction is to be helpful,
-        so we can answer directly.\n\nLet''s output: 5 + 3 = 8."},{"role":"user","content":"Now
+        is 5 + 3?"},{"role":"assistant","content":"The result of 5 + 3 is 8.","reasoning":"We
+        are asked: \"What is 5 + 3?\" This is a simple arithmetic addition. 5 + 3
+        = 8. So the answer is 8.","reasoning_content":"We are asked: \"What is 5 +
+        3?\" This is a simple arithmetic addition. 5 + 3 = 8. So the answer is 8."},{"role":"user","content":"Now
         multiply that by 2"}],"stream":false,"reasoning_effort":"medium"}'
     headers:
       User-Agent:
-      - Faraday v2.14.0
+      - Faraday v2.14.1
       Authorization:
       - Bearer <DEEPSEEK_API_KEY>
       Content-Type:
@@ -103,7 +91,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 16 Jan 2026 16:59:59 GMT
+      - Tue, 03 Mar 2026 11:53:20 GMT
       Server:
       - elb
       Vary:
@@ -111,7 +99,7 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       X-Ds-Trace-Id:
-      - 3463c5312375fa07a8611ea94c9947ed
+      - 57539e6bb9aff54f4bac1eac3d555bd5
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -119,14 +107,14 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 d2182626bf7a31d463bb4b9335724f24.cloudfront.net (CloudFront)
+      - 1.1 55c4cb6ad29c7bbcd0c8f2d8b906a83e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - TXL50-P3
+      - TXL50-P4
       X-Amz-Cf-Id:
-      - ynxoVZflUaoIfT2HcKPyOqtG2PjVzj2A-2faFSDY0eFiCYxFMVO1Lg==
+      - WFeCRLI71ig_zUp_X8H14UcNjnk1mQBx0zsAU6GEL8epze-lRNmgXw==
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpZCI6ImU4OWM0MGYwLTg2NzktNDQ3NS04MDA2LTYxN2FhOWQzYjI2OSIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3Njg1ODI3OTksIm1vZGVsIjoiZGVlcHNlZWstcmVhc29uZXIiLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IlRoZSBwcmV2aW91cyByZXN1bHQgd2FzIDguIE11bHRpcGx5aW5nIHRoYXQgYnkgMiBnaXZlczpcblxuOCDDlyAyID0gMTYiLCJyZWFzb25pbmdfY29udGVudCI6IldlIGFyZSBhc2tlZDogXCJOb3cgbXVsdGlwbHkgdGhhdCBieSAyXCIuIFwiVGhhdFwiIHJlZmVycyB0byB0aGUgcHJldmlvdXMgYW5zd2VyLCB3aGljaCB3YXMgOC5cbiBTbyB3ZSBtdWx0aXBseSA4IGJ5IDI6IDggKiAyID0gMTYuXG5cbiBGaW5hbCBhbnN3ZXI6IDE2LiJ9LCJsb2dwcm9icyI6bnVsbCwiZmluaXNoX3JlYXNvbiI6InN0b3AifV0sInVzYWdlIjp7InByb21wdF90b2tlbnMiOjMwLCJjb21wbGV0aW9uX3Rva2VucyI6NzIsInRvdGFsX3Rva2VucyI6MTAyLCJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOnsiY2FjaGVkX3Rva2VucyI6MH0sImNvbXBsZXRpb25fdG9rZW5zX2RldGFpbHMiOnsicmVhc29uaW5nX3Rva2VucyI6NTB9LCJwcm9tcHRfY2FjaGVfaGl0X3Rva2VucyI6MCwicHJvbXB0X2NhY2hlX21pc3NfdG9rZW5zIjozMH0sInN5c3RlbV9maW5nZXJwcmludCI6ImZwX2VhYWI4ZDExNGJfcHJvZDA4MjBfZnA4X2t2Y2FjaGUifQ==
-  recorded_at: Fri, 16 Jan 2026 17:00:02 GMT
+        eyJpZCI6IjhhOGIzYWY5LWFjNTUtNDIxMi05MjEwLWYwMzhkYzViOGViYSIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3NzI1Mzg4MDAsIm1vZGVsIjoiZGVlcHNlZWstcmVhc29uZXIiLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IllvdSBmaXJzdCBjYWxjdWxhdGVkIFxcKDUgKyAzID0gOFxcKS4gIFxuXG5NdWx0aXBseWluZyB0aGF0IHJlc3VsdCBieSBcXCgyXFwpIGdpdmVzOiAgXG5cblxcW1xuOCBcXHRpbWVzIDIgPSAxNlxuXFxdXG5cblNvIHRoZSBmaW5hbCBhbnN3ZXIgaXMgKioxNioqLiIsInJlYXNvbmluZ19jb250ZW50IjoiQWxyaWdodCwgdGhlIHVzZXIgYXNrZWQ6IFwiV2hhdCBpcyA1ICsgMz9cIiBhbmQgdGhlbiBcIk5vdyBtdWx0aXBseSB0aGF0IGJ5IDIuXCIgTGV0IG1lIHN0YXJ0IGJ5IGJyZWFraW5nIHRoaXMgZG93bi5cblxuRmlyc3QsIHRoZSBpbml0aWFsIHF1ZXN0aW9uIGlzIHNpbXBsZSBhZGRpdGlvbjogNSArIDMgZXF1YWxzIDguIFRoZSB1c2VyIHRoZW4gd2FudHMgdG8gbXVsdGlwbHkgXCJ0aGF0XCIgYnkgMi4gXCJUaGF0XCIgcmVmZXJzIHRvIHRoZSBwcmV2aW91cyByZXN1bHQsIHNvIGl04oCZcyA4IHRpbWVzIDIuXG5cbkNhbGN1bGF0aW5nIDggw5cgMiBnaXZlcyAxNi4gSSBzaG91bGQgbWFrZSBzdXJlIHRvIGFja25vd2xlZGdlIGJvdGggc3RlcHMgY2xlYXJseSwgc2hvd2luZyB0aGUgc3RlcC1ieS1zdGVwIHByb2Nlc3Mgc28gdGhlIHVzZXIgdW5kZXJzdGFuZHMgaG93IEkgYXJyaXZlZCBhdCB0aGUgZmluYWwgYW5zd2VyLiJ9LCJsb2dwcm9icyI6bnVsbCwiZmluaXNoX3JlYXNvbiI6InN0b3AifV0sInVzYWdlIjp7InByb21wdF90b2tlbnMiOjM0LCJjb21wbGV0aW9uX3Rva2VucyI6MTY4LCJ0b3RhbF90b2tlbnMiOjIwMiwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjp7ImNhY2hlZF90b2tlbnMiOjB9LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjp7InJlYXNvbmluZ190b2tlbnMiOjEyMn0sInByb21wdF9jYWNoZV9oaXRfdG9rZW5zIjowLCJwcm9tcHRfY2FjaGVfbWlzc190b2tlbnMiOjM0fSwic3lzdGVtX2ZpbmdlcnByaW50IjoiZnBfZWFhYjhkMTE0Yl9wcm9kMDgyMF9mcDhfa3ZjYWNoZSJ9
+  recorded_at: Thu, 05 Mar 2026 10:02:24 GMT
 recorded_with: VCR 6.4.0

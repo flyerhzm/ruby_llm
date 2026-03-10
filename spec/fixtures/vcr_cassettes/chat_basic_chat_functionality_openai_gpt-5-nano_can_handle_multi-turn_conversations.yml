@@ -9,7 +9,7 @@ http_interactions:
         the creator of the programming language Ruby?"}],"stream":false}'
     headers:
       User-Agent:
-      - Faraday v2.14.0
+      - Faraday v2.14.1
       Authorization:
       - Bearer <OPENAI_API_KEY>
       Content-Type:
@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Jan 2026 16:52:13 GMT
+      - Tue, 03 Mar 2026 11:52:03 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -36,13 +36,13 @@ http_interactions:
       Openai-Organization:
       - "<OPENAI_ORGANIZATION>"
       Openai-Processing-Ms:
-      - '2300'
+      - '2944'
       Openai-Project:
       - proj_61L3Oqt640dKU0CASS2iOj8Q
       Openai-Version:
       - '2020-10-01'
-      X-Envoy-Upstream-Service-Time:
-      - '2541'
+      Server:
+      - cloudflare
       X-Ratelimit-Limit-Requests:
       - '500'
       X-Ratelimit-Limit-Tokens:
@@ -63,13 +63,10 @@ http_interactions:
       - DYNAMIC
       Set-Cookie:
       - "<COOKIE>"
-      - "<COOKIE>"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
       - nosniff
-      Server:
-      - cloudflare
       Cf-Ray:
       - "<CF_RAY>"
       Alt-Svc:
@@ -78,16 +75,16 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-CyhLPgB9RdyhieXt2Rwu2cnOeFQe9",
+          "id": "chatcmpl-DFIa8O1Xp27JJi8EndNfiZqyNZgVo",
           "object": "chat.completion",
-          "created": 1768582331,
+          "created": 1772538720,
           "model": "gpt-5-nano-2025-08-07",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "Yukihiro Matsumoto, commonly known as Matz, is the creator of the Ruby programming language (first released in 1995).",
+                "content": "Yukihiro Matsumoto (often called Matz) created the Ruby programming language, with its first public release in 1995.",
                 "refusal": null,
                 "annotations": []
               },
@@ -96,14 +93,14 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 16,
-            "completion_tokens": 231,
-            "total_tokens": 247,
+            "completion_tokens": 294,
+            "total_tokens": 310,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
             },
             "completion_tokens_details": {
-              "reasoning_tokens": 192,
+              "reasoning_tokens": 256,
               "audio_tokens": 0,
               "accepted_prediction_tokens": 0,
               "rejected_prediction_tokens": 0
@@ -112,7 +109,7 @@ http_interactions:
           "service_tier": "default",
           "system_fingerprint": null
         }
-  recorded_at: Fri, 16 Jan 2026 16:52:13 GMT
+  recorded_at: Thu, 05 Mar 2026 10:02:24 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -120,12 +117,12 @@ http_interactions:
       encoding: UTF-8
       string: '{"model":"gpt-5-nano","messages":[{"role":"user","content":"Who is
         the creator of the programming language Ruby?"},{"role":"assistant","content":"Yukihiro
-        Matsumoto, commonly known as Matz, is the creator of the Ruby programming
-        language (first released in 1995)."},{"role":"user","content":"What year did
+        Matsumoto (often called Matz) created the Ruby programming language, with
+        its first public release in 1995."},{"role":"user","content":"What year did
         he create Ruby?"}],"stream":false}'
     headers:
       User-Agent:
-      - Faraday v2.14.0
+      - Faraday v2.14.1
       Authorization:
       - Bearer <OPENAI_API_KEY>
       Content-Type:
@@ -140,7 +137,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Jan 2026 16:52:18 GMT
+      - Tue, 03 Mar 2026 11:52:04 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -152,13 +149,13 @@ http_interactions:
       Openai-Organization:
       - "<OPENAI_ORGANIZATION>"
       Openai-Processing-Ms:
-      - '4367'
+      - '1690'
       Openai-Project:
       - proj_61L3Oqt640dKU0CASS2iOj8Q
       Openai-Version:
       - '2020-10-01'
-      X-Envoy-Upstream-Service-Time:
-      - '4560'
+      Server:
+      - cloudflare
       X-Ratelimit-Limit-Requests:
       - '500'
       X-Ratelimit-Limit-Tokens:
@@ -179,13 +176,10 @@ http_interactions:
       - DYNAMIC
       Set-Cookie:
       - "<COOKIE>"
-      - "<COOKIE>"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
       - nosniff
-      Server:
-      - cloudflare
       Cf-Ray:
       - "<CF_RAY>"
       Alt-Svc:
@@ -194,16 +188,16 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-CyhLS1XhFxGEucDvNfFIMNFzvv5Q3",
+          "id": "chatcmpl-DFIaBCfxxj08gJtIdShjoFGYstweD",
           "object": "chat.completion",
-          "created": 1768582334,
+          "created": 1772538723,
           "model": "gpt-5-nano-2025-08-07",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "1995. Ruby was first released in 1995 by Yukihiro Matsumoto (Matz).",
+                "content": "1995.",
                 "refusal": null,
                 "annotations": []
               },
@@ -211,15 +205,15 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 63,
-            "completion_tokens": 415,
-            "total_tokens": 478,
+            "prompt_tokens": 62,
+            "completion_tokens": 204,
+            "total_tokens": 266,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
             },
             "completion_tokens_details": {
-              "reasoning_tokens": 384,
+              "reasoning_tokens": 192,
               "audio_tokens": 0,
               "accepted_prediction_tokens": 0,
               "rejected_prediction_tokens": 0
@@ -228,5 +222,5 @@ http_interactions:
           "service_tier": "default",
           "system_fingerprint": null
         }
-  recorded_at: Fri, 16 Jan 2026 16:52:18 GMT
+  recorded_at: Thu, 05 Mar 2026 10:02:24 GMT
 recorded_with: VCR 6.4.0

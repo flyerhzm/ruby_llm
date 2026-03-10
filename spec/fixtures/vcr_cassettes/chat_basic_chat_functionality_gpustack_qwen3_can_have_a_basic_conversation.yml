@@ -9,7 +9,7 @@ http_interactions:
         2?"}],"stream":false}'
     headers:
       User-Agent:
-      - Faraday v2.14.0
+      - Faraday v2.14.1
       Authorization:
       - Bearer <GPUSTACK_API_KEY>
       Content-Type:
@@ -24,15 +24,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Jan 2026 16:51:19 GMT
-      - Fri, 16 Jan 2026 16:51:19 GMT
+      - Tue, 03 Mar 2026 11:51:15 GMT
+      - Tue, 03 Mar 2026 11:51:15 GMT
       Server:
       - uvicorn
       - uvicorn
       Keep-Alive:
       - timeout=15, max=100
       Content-Length:
-      - '1918'
+      - '2340'
       Content-Type:
       - application/json
       X-Request-Accepted-At:
@@ -44,21 +44,27 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"choices":[{"finish_reason":"stop","index":0,"message":{"content":"\n\nThe
-        sum of 2 and 2 is **4**. \n\nIn basic arithmetic, adding two numbers means
-        combining their quantities. So, 2 + 2 equals 4. This is a fundamental concept
-        in mathematics and applies in standard base-10 numbering systems unless specified
-        otherwise (e.g., modular arithmetic or other contexts). \n\n**Answer:** 4.","reasoning_content":"\nOkay,
-        let''s see. The user is asking \"What''s 2 + 2?\" That seems straightforward.
-        I know that 2 plus 2 is 4. But wait, maybe they want a more detailed explanation?
-        Let me think. Sometimes people might be testing if I understand basic arithmetic,
-        or they might be looking for a different answer. But in standard math, 2 +
-        2 equals 4. Is there any context where this might not be the case? Like in
-        modular arithmetic or some other system? For example, in modulo 3, 2 + 2 would
-        be 1, but the question doesn''t specify that. So I should assume it''s in
-        the usual base 10 system. Also, the user might just be checking if I can answer
-        a simple question. I should make sure to explain it clearly, maybe even break
-        it down. Let me confirm: 2 plus 2 is 4. Yes, that''s correct. I should also
-        consider if there''s any trick or if they''re using a different notation.
-        But no, the question is pretty direct. So the answer is 4. I''ll go with that.\n","role":"assistant"}}],"created":1768582282,"id":"chatcmpl-hS26r6wouAPJnrWiFLXGP6wvrNWqbQre","model":"qwen3","object":"chat.completion","usage":{"completion_tokens":316,"completion_tokens_details":{"accepted_prediction_tokens":0,"reasoning_tokens":239,"rejected_prediction_tokens":0},"draft_tokens":0,"draft_tokens_acceptance":0.0,"prompt_tokens":16,"prompt_tokens_details":{"cached_tokens":0},"prompt_tokens_per_second":223.38880822070817,"time_per_output_token_ms":7.893575949367088,"time_to_first_token_ms":71.624,"tokens_per_second":126.68529528498179,"total_tokens":332}}'
-  recorded_at: Fri, 16 Jan 2026 16:51:22 GMT
+        sum of 2 and 2 is **4**. \n\n**Explanation:**  \nWhen you add 2 and 2 together,
+        you combine their quantities:  \n$$\n2 + 2 = 4\n$$  \nThis is the basic arithmetic
+        result in standard base-10 notation.","reasoning_content":"\nOkay, the user
+        asked \"What is 2 + 2?\" which is a basic arithmetic question. Let me start
+        by recalling that addition is one of the fundamental operations in mathematics.
+        When you add two numbers, you''re combining their quantities.\n\nSo, 2 + 2.
+        Let me visualize it. If I have two objects and add another two objects, how
+        many do I have in total? Let''s count: 1, 2 (from the first number) and then
+        3, 4 (from the second number). That makes 4. \n\nWait, but maybe I should
+        check if there''s any context where this might not be straightforward. For
+        example, in some contexts like modular arithmetic, 2 + 2 could be different.
+        But since the question is simple and doesn''t mention any specific context,
+        the standard answer should be 4. \n\nAlternatively, maybe the user is testing
+        if I can recognize a trick question. But 2 + 2 is pretty basic. Let me think
+        again. In binary, 2 is represented as 10, so 10 + 10 would be 100, which is
+        4 in decimal. So even in binary, it''s still 4. \n\nIs there any other possible
+        interpretation? If the numbers are in a different base, but again, unless
+        specified, base 10 is the default. \n\nAnother angle: maybe the user is using
+        a non-standard notation. But without any indication of that, I should stick
+        with the standard interpretation. \n\nSo, the answer is 4. I should present
+        it clearly, maybe explain the steps briefly to ensure clarity, but since it''s
+        a simple question, a direct answer with a short explanation would be best.\n","role":"assistant"}}],"created":1772538680,"id":"chatcmpl-BCwSgCX17xVYmU6yDq69r1e0n0BSfWM6","model":"qwen3","object":"chat.completion","usage":{"completion_tokens":419,"completion_tokens_details":{"accepted_prediction_tokens":0,"reasoning_tokens":356,"rejected_prediction_tokens":0},"draft_tokens":0,"draft_tokens_acceptance":0.0,"prompt_tokens":16,"prompt_tokens_details":{"cached_tokens":4},"prompt_tokens_per_second":897.3639932697702,"time_per_output_token_ms":8.72756324582339,"time_to_first_token_ms":17.83,"tokens_per_second":114.57951914339365,"total_tokens":435}}'
+  recorded_at: Thu, 05 Mar 2026 10:02:24 GMT
 recorded_with: VCR 6.4.0

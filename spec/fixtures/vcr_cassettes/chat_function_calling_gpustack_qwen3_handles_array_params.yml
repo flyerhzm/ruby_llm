@@ -11,7 +11,7 @@ http_interactions:
         of tags to combine","items":{"type":"string"}}},"required":["tags"],"additionalProperties":false,"strict":true}}}],"enable_thinking":false}'
     headers:
       User-Agent:
-      - Faraday v2.14.0
+      - Faraday v2.14.1
       Authorization:
       - Bearer <GPUSTACK_API_KEY>
       Content-Type:
@@ -26,15 +26,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Jan 2026 17:10:26 GMT
-      - Fri, 16 Jan 2026 17:10:26 GMT
+      - Tue, 03 Mar 2026 11:52:27 GMT
+      - Tue, 03 Mar 2026 11:52:28 GMT
       Server:
       - uvicorn
       - uvicorn
       Keep-Alive:
       - timeout=15, max=100
       Content-Length:
-      - '1966'
+      - '1607'
       Content-Type:
       - application/json
       X-Request-Accepted-At:
@@ -51,15 +51,10 @@ http_interactions:
         The function takes an object with a property \"tags\" which is an array of
         strings. The required parameter is \"tags\", and it''s an array. So I need
         to structure the arguments correctly. The user provided the tags as [\"red\",
-        \"blue\"], so I should pass those exactly. The function''s purpose is to combine
-        the tags, so the output should be those two tags combined, maybe as a single
-        string separated by commas or something. But the function''s description says
-        \"uses params DSL array support,\" so maybe it just returns the array as is.
-        But the user says \"tell me the combined tags,\" so perhaps the function combines
-        them into a single string. Wait, the function''s parameters are set up to
-        accept an array, so when I call it, the arguments should be {\"tags\": [\"red\",
-        \"blue\"]}. Then, the function might process them. Since the user wants the
-        combined result, I need to make sure the function is called correctly. I''ll
-        generate the tool call with the tags array.\n","role":"assistant","tool_calls":[{"function":{"arguments":"{\"tags\":[\"red\",\"blue\"]}","name":"array_params"},"id":"call-tiPvqJCAXRexctegCkSikkKKBlu7KxfH","type":"function"}]}}],"created":1768583428,"id":"chatcmpl-snWLjna0ZEz9oP0qiRLMY7u3u2ML3M9v","model":"qwen3","object":"chat.completion","usage":{"completion_tokens":268,"completion_tokens_details":{"accepted_prediction_tokens":0,"reasoning_tokens":243,"rejected_prediction_tokens":0},"draft_tokens":0,"draft_tokens_acceptance":0.0,"prompt_tokens":237,"prompt_tokens_details":{"cached_tokens":66},"prompt_tokens_per_second":4507.502995492497,"time_per_output_token_ms":8.248149253731343,"time_to_first_token_ms":52.579,"tokens_per_second":121.23931917788885,"total_tokens":505}}'
-  recorded_at: Fri, 16 Jan 2026 17:10:28 GMT
+        \"blue\"], so I should pass those exactly. Since the function is supposed
+        to combine the tags, maybe it just returns them as a single array. I don''t
+        need to do anything else; just call the function with those tags. Let me make
+        sure the JSON is formatted right. The name is \"array_params\" and the arguments
+        should have \"tags\" as the key with the array. Alright, that should be it.\n","role":"assistant","tool_calls":[{"function":{"arguments":"{\"tags\":[\"red\",\"blue\"]}","name":"array_params"},"id":"call-1CTrQuF4UO1FTDCN0nLyZFnoxJp99sMJ","type":"function"}]}}],"created":1772538750,"id":"chatcmpl-FDyhjj565oIPj3siMUQZNCfJIhnU4cgx","model":"qwen3","object":"chat.completion","usage":{"completion_tokens":196,"completion_tokens_details":{"accepted_prediction_tokens":0,"reasoning_tokens":171,"rejected_prediction_tokens":0},"draft_tokens":0,"draft_tokens_acceptance":0.0,"prompt_tokens":237,"prompt_tokens_details":{"cached_tokens":3},"prompt_tokens_per_second":3260.9592999256997,"time_per_output_token_ms":8.260525510204083,"time_to_first_token_ms":72.678,"tokens_per_second":121.05767348151367,"total_tokens":433}}'
+  recorded_at: Thu, 05 Mar 2026 10:02:24 GMT
 recorded_with: VCR 6.4.0
